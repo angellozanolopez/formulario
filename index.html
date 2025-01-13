@@ -44,7 +44,7 @@
       e.preventDefault();
 
       const datos = new FormData(formulario);
-      const response = await fetch("https://docs.google.com/spreadsheets/d/1tbBxPUX_zyjS5fNZlCFdbQS7oS5hWbHeyLD69WOiVkM/edit?usp=sharing", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzCAg9WwLoCKkyuVQgWfpzFv9qfXHtxFvRR8uc2z4rc5smPEXpwJyqPS7iF9T5mCikxgA/exec", {
         method: "POST",
         body: datos,
       });
