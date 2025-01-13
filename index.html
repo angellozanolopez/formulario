@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Personalizado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #14d0f6;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Formulario de Contacto</h1>
+  <form id="formulario">
+    <input type="text" name="nombre" placeholder="Tu Nombre" required>
+    <input type="email" name="email" placeholder="Tu Email" required>
+    <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="resultado"></p>
+
+  <script>
+    const formulario = document.getElementById('formulario');
+    const resultado = document.getElementById('resultado');
+
+    formulario.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const datos = new FormData(formulario);
+      const response = await fetch("TU_URL_DEL_ENDPOINT", {
+        method: "POST",
+        body: datos,
+      });
+
+      if (response.ok) {
+        resultado.textContent = "Mensaje enviado con éxito.";
+        formulario.reset();
+      } else {
+        resultado.textContent = "Hubo un error al enviar el mensaje.";
+      }
+    });
+  </script>
+</body>
+</html>
