@@ -30,10 +30,12 @@
   <h1>Formulario de Contacto</h1>
   <form id="formulario">
     <input type="text" name="nombre" placeholder="Tu Nombre" required>
+    <input type="text" name="telefono" placeholder="Tu Teléfono"> <!-- Campo añadido -->
     <input type="email" name="email" placeholder="Tu Email" required>
+    <input type="text" name="tema" placeholder="Tema del mensaje"> <!-- Campo añadido -->
     <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" required></textarea>
     <button type="submit">Enviar</button>
-  </form>
+  </form>  
   <p id="resultado"></p>
 
   <script>
