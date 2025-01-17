@@ -38,8 +38,10 @@
 
             fetch('https://script.google.com/macros/s/AKfycbwDrwKSnErnlZQDP9liIqFoxqZxu4APXqIYAHUgwCzgk_SKBPEVXrjxT71B_sIhykUlOQ/exec', {
                 method: 'POST',
-                body: JSON.stringify(formObject),
-                headers: { 'Content-Type': 'application/json' }
+                body: JSON.stringify(formObject), // Asegúrate de enviar los datos en formato JSON
+                headers: {
+                    'Content-Type': 'application/json' // Define el tipo de contenido como JSON
+                }
             })
             .then(response => response.json())
             .then(data => alert('Formulario enviado correctamente.'))
